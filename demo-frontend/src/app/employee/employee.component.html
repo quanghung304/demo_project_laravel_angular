@@ -1,0 +1,76 @@
+<table mat-table [dataSource]="employees" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="fullName">
+      <th mat-header-cell *matHeaderCellDef> Họ tên </th>
+      <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="employee_id">
+      <th mat-header-cell *matHeaderCellDef> Mã nhân viên </th>
+      <td mat-cell *matCellDef="let element"> {{element.employee_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="department_id">
+        <th mat-header-cell *matHeaderCellDef> Mã phòng ban </th>
+        <td mat-cell *matCellDef="let element"> {{element.department_id}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="basic_salary">
+        <th mat-header-cell *matHeaderCellDef> Lương cơ bản </th>
+        <td mat-cell *matCellDef="let element"> {{element.basic_salary}} </td>
+    </ng-container>
+        
+    <ng-container matColumnDef="lunch_allowance">
+        <th mat-header-cell *matHeaderCellDef> Phụ cấp ăn trưa </th>
+        <td mat-cell *matCellDef="let element"> {{element.lunch_allowance}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="other_allowance">
+        <th mat-header-cell *matHeaderCellDef> Phụ cấp khác </th>
+        <td mat-cell *matCellDef="let element"> {{element.other_allowance}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="insurance_rate">
+        <th mat-header-cell *matHeaderCellDef> Tỷ suất bảo hiểm </th>
+        <td mat-cell *matCellDef="let element"> {{element.insurance_rate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dependents_number">
+        <th mat-header-cell *matHeaderCellDef> Số người phụ thuộc </th>
+        <td mat-cell *matCellDef="let element"> {{element.dependents_number}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="link">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element">
+            <a routerLink="/salary_reports/{{element.employee_id}}">Xem báo cáo lương</a>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element">
+            <button title="edit employee" (click)="goToEdit(element.employee_id)">Chỉnh sửa</button>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element">
+            <button title="delete employee" (click)="deleteEmployee(element.employee_id)">Xóa</button>
+        </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <button class="button-7" routerLink="/employees/add">Thêm nhân viên</button>
+  
+  
+  
+  

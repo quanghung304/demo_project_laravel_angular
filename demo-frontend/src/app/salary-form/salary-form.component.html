@@ -1,0 +1,30 @@
+<form [formGroup]="salaryReportFormGroup" (ngSubmit)="saveSalaryReport()">
+    <div class="form-group">
+        <label class="center-block">Tháng
+            <input type="text" class="form-control" formControlName="thang">
+        </label>
+        <label class="center-block">Mã nhân viên
+            <input type="text" class="form-control" formControlName="employee_id">
+        </label>
+        <label class="center-block">Ngày công chuẩn
+            <input type="text" class="form-control" formControlName="ngay_cong_chuan">
+        </label>
+        <label class="center-block">Ngày công Overtime
+            <input type="text" class="form-control" formControlName="ngay_cong_OT">
+        </label>
+        <label class="center-block">Công tác phí
+            <input type="text" class="form-control" formControlName="cong_tac_phi">
+        </label>
+        <label class="center-block">Thưởng
+            <input type="text" class="form-control" formControlName="thuong">
+        </label>
+        <label class="center-block">Phút đi muộn
+            <input type="text" class="form-control" formControlName="phut_di_muon">
+        </label>
+        <label class="center-block">Khoản trừ khác
+            <input type="text" class="form-control" formControlName="khoan_tru_khac">
+        </label>
+    </div>
+    <!-- <p>Form value: {{salaryReportFormGroup.value.employee_id | json }}</p> -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

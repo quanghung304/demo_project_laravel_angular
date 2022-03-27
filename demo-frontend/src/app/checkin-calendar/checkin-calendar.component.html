@@ -1,0 +1,186 @@
+<table mat-table [dataSource]="checkinCalendars" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="thang">
+      <th mat-header-cell *matHeaderCellDef> Tháng </th>
+      <td mat-cell *matCellDef="let element"> {{element.thang}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="employee_id">
+      <th mat-header-cell *matHeaderCellDef> Mã nhân viên </th>
+      <td mat-cell *matCellDef="let element"> {{element.employee_id}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="cong_theo_thang">
+        <th mat-header-cell *matHeaderCellDef> Tổng số ngày công</th>
+        <td mat-cell *matCellDef="let element"> {{element.cong_theo_thang}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="day_1">
+        <th mat-header-cell *matHeaderCellDef> Ngày 1</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_1}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="day_2">
+        <th mat-header-cell *matHeaderCellDef> Ngày 2</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_2}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="day_3">
+        <th mat-header-cell *matHeaderCellDef> Ngày 3</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_3}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="day_4">
+        <th mat-header-cell *matHeaderCellDef> Ngày 4</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_4}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="day_5">
+        <th mat-header-cell *matHeaderCellDef> Ngày 5</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_5}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="day_6">
+        <th mat-header-cell *matHeaderCellDef> Ngày 6</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_6}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="day_7">
+        <th mat-header-cell *matHeaderCellDef> Ngày 7</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_7}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="day_8">
+        <th mat-header-cell *matHeaderCellDef> Ngày 8</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_8}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="day_9">
+        <th mat-header-cell *matHeaderCellDef> Ngày 9 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_9}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="day_10">
+        <th mat-header-cell *matHeaderCellDef> Ngày 10 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_10}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_11">
+        <th mat-header-cell *matHeaderCellDef> Ngày 11 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_11}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_12">
+        <th mat-header-cell *matHeaderCellDef> Ngày 12 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_12}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_13">
+        <th mat-header-cell *matHeaderCellDef> Ngày 13 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_13}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_14">
+        <th mat-header-cell *matHeaderCellDef> Ngày 14 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_14}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_15">
+        <th mat-header-cell *matHeaderCellDef> Ngày 15 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_15}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_16">
+        <th mat-header-cell *matHeaderCellDef> Ngày 16 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_16}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_17">
+        <th mat-header-cell *matHeaderCellDef> Ngày 17 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_17}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_18">
+        <th mat-header-cell *matHeaderCellDef> Ngày 18 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_18}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_19">
+        <th mat-header-cell *matHeaderCellDef> Ngày 19 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_19}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_20">
+        <th mat-header-cell *matHeaderCellDef> Ngày 20 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_20}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_21">
+        <th mat-header-cell *matHeaderCellDef> Ngày 21 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_21}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_22">
+        <th mat-header-cell *matHeaderCellDef> Ngày 22 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_22}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_23">
+        <th mat-header-cell *matHeaderCellDef> Ngày 23 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_23}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_24">
+        <th mat-header-cell *matHeaderCellDef> Ngày 24 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_24}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_25">
+        <th mat-header-cell *matHeaderCellDef> Ngày 25 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_25}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_26">
+        <th mat-header-cell *matHeaderCellDef> Ngày 26 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_26}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_27">
+        <th mat-header-cell *matHeaderCellDef> Ngày 27 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_27}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_28">
+        <th mat-header-cell *matHeaderCellDef> Ngày 28 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_28}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_29">
+        <th mat-header-cell *matHeaderCellDef> Ngày 29 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_29}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_30">
+        <th mat-header-cell *matHeaderCellDef> Ngày 30 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_30}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="day_31">
+        <th mat-header-cell *matHeaderCellDef> Ngày 31 </th>
+        <td mat-cell *matCellDef="let element"> {{element.day_31}} </td>
+      </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <a routerLink="">Về trang chủ</a>
+  
+  
+  
+
