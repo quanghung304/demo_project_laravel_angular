@@ -16,8 +16,8 @@ class CreateSalaryReportsTable extends Migration
         Schema::create('salary_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('thang');
-            $table->string('employee_id')->default('NV');
-            $table->foreign('employee_id')->references('employee_id')->on('employees');
+            $table->string('employee_id')->nullable();
+            $table->foreign('employee_id')->references('employee_id')->on('employees')->onDelete('set null');
             $table->integer('ngay_cong_chuan')->default('20');
             $table->decimal('ngay_cong_tinh_luong', $precision = 3, $scale = 1);
             $table->integer('ngay_cong_OT')->nullable();

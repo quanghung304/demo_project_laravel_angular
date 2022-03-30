@@ -16,8 +16,8 @@ class CreateCheckinCalendarsTable extends Migration
         Schema::create('checkin_calendars', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('thang');
-            $table->string('employee_id')->default('NV');
-            $table->foreign('employee_id')->references('employee_id')->on('employees');
+            $table->string('employee_id')->nullable();
+            $table->foreign('employee_id')->references('employee_id')->on('employees')->onDelete('set null');
             $table->double('cong_theo_thang', $precision = 3, $scale = 1)->default('00.0');
             $table->double('day_1', $precision = 2, $scale = 1)->nullable();
             $table->double('day_2', $precision = 2, $scale = 1)->nullable();
