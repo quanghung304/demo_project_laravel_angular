@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CheckinCalendarComponent } from './checkin-calendar/checkin-calendar.component';
-import { CheckinFormComponent } from './checkin-form/checkin-form.component';
-import { EmployeeFormComponent } from './employee-form/employee-form.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { SalaryFormComponent } from './salary-form/salary-form.component';
-import { SalaryReportComponent } from './salary-report/salary-report.component';
+import { CheckinCalendarComponent } from './modules/checkin_calendar/checkin-calendar/checkin-calendar.component';
+import { CheckinFormComponent } from './modules/checkin_calendar/checkin-form/checkin-form.component';
+import { EmployeeFormComponent } from './modules/employee/employee-form/employee-form.component';
+import { EmployeeComponent } from './modules/employee/employee/employee.component';
+import { SalaryFormComponent } from './modules/salary_report/salary-form/salary-form.component';
+import { SalaryReportComponent } from './modules/salary_report/salary-report/salary-report.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/employees', pathMatch: 'full'},

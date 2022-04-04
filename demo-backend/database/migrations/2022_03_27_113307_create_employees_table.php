@@ -23,8 +23,8 @@ class CreateEmployeesTable extends Migration
             $table->integer('basic_salary')->default('0');
             $table->integer('lunch_allowance')->default('0');
             $table->integer('other_allowance')->default('0');
-            $table->decimal('insurance_rate', $precision = 2, $scale = 1)->default('0.0');
-            $table->integer('dependents_number')->default('0');
+            $table->decimal('insurance_rate', $precision = 3, $scale = 2)->default('0.00')->nullable();
+            $table->integer('dependents_number')->default('0')->nullable();
         });
     }
 

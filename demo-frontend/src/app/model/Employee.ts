@@ -1,4 +1,5 @@
 export interface Employee {
+    [x: string]: any;
     fullName: string,
     employee_id: number,
     email: string,

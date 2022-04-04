@@ -15,7 +15,7 @@ class CreateSalaryReportsTable extends Migration
     {
         Schema::create('salary_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('thang');
+            $table->string('month');
             $table->string('employee_id')->nullable();
             $table->foreign('employee_id')->references('employee_id')->on('employees')->onUpdate('cascade')->onDelete('set null');
             $table->integer('ngay_cong_chuan')->default('20');

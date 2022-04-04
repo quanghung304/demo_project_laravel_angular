@@ -26,7 +26,7 @@ Route::delete('employees/{id}', 'EmployeeController@deleteEmployee');
 //Checkin calendar api
 Route::get('checkin_calendar', 'CheckinCalendarController@getAllCheckinCalendar');
 Route::post('checkin_calendar', 'CheckinCalendarController@addCheckinCal');
-Route::get('checkin_calendar/{id}', 'CheckinCalendarController@getCheckinCalByEmployee');
+Route::get('checkin_calendar/{id}', 'CheckinCalendarController@getCheckinCalById');
 Route::put('checkin_calendar', 'CheckinCalendarController@updateCheckinCal');
 //Salary report api
 Route::post('salary_reports', 'SalaryReportController@addSalReport');
@@ -34,8 +34,8 @@ Route::get('salary_reports', 'SalaryReportController@getAllSalaryReport');
 Route::get('salary_reports/{id}', 'SalaryReportController@getSalReportByEmployee');
 Route::put('salary_reports', 'SalaryReportController@updateSalReport');
 //Trancsaction record api
-Route::post('transactions', 'TransactionRecordController@addTransaction');
-Route::get('transactions', 'TransactionRecordController@getAllTransaction');
-Route::put('transactions', 'TransactionRecordController@updateTransaction');
-//Balance sheet api
-Route::get('balance_sheet', 'FinanceReportController@getFinanceReport');
+//Route::post('transactions', 'TransactionRecordController@addTransaction');
+//Route::get('transactions', 'TransactionRecordController@getAllTransaction');
+//Route::put('transactions', 'TransactionRecordController@updateTransaction');
+////Balance sheet api
+//Route::get('balance_sheet', 'FinanceReportController@getFinanceReport');

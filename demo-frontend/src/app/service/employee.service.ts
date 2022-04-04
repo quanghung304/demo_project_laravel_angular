@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Employee } from '../model/Employee';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -20,9 +20,9 @@ export class EmployeeServiceService {
     return this.http.get<Employee[]>(this.employeeUrl);
   }
   
-  getAnEmployee(id: string): Observable<Employee> {
+  getAnEmployee(id: string): Observable<any> {
     const url = `${this.employeeUrl}/${id}`;
-    return this.http.get<Employee>(url);
+    return this.http.get<any>(url)
   }
 
   saveEmployee(newEmployee: Employee): Observable<Employee> {
@@ -32,6 +32,7 @@ export class EmployeeServiceService {
   updateEmployee(employee: Employee): Observable<any> {
     return this.http.put(this.employeeUrl, employee, httpOptions);
   }
+  
   deleteEmployee(employeeId: string): Observable<Employee> {
     const url = `${this.employeeUrl}/${employeeId}`;
     return this.http.delete<Employee>(url, httpOptions);
