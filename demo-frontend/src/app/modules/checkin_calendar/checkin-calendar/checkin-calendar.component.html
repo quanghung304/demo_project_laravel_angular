@@ -1,0 +1,65 @@
+<table mat-table [dataSource]="checkinCalendars" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="month">
+      <th mat-header-cell *matHeaderCellDef> Tháng </th>
+      <td mat-cell *matCellDef="let element"> {{element.month}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="employee_id">
+      <th mat-header-cell *matHeaderCellDef> Mã nhân viên </th>
+      <td mat-cell *matCellDef="let element"> {{element.employee_id}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="cong_theo_thang">
+      <th mat-header-cell *matHeaderCellDef> Công theo tháng </th>
+      <td mat-cell *matCellDef="let element"> {{element.cong_theo_thang}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="day_1">
+        <th mat-header-cell *matHeaderCellDef> Ngày 1</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_1}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="day_2">
+        <th mat-header-cell *matHeaderCellDef> Ngày 2</th>
+        <td mat-cell *matCellDef="let element"> {{element.day_2}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="day_3">
+      <th mat-header-cell *matHeaderCellDef> Ngày 3</th>
+      <td mat-cell *matCellDef="let element"> {{element.day_3}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="day_4">
+    <th mat-header-cell *matHeaderCellDef> Ngày 4</th>
+    <td mat-cell *matCellDef="let element"> {{element.day_4}} </td>
+</ng-container>
+
+<ng-container matColumnDef="day_5">
+  <th mat-header-cell *matHeaderCellDef> Ngày 5</th>
+  <td mat-cell *matCellDef="let element"> {{element.day_5}} </td>
+</ng-container>
+
+<ng-container matColumnDef="day_6">
+  <th mat-header-cell *matHeaderCellDef> Ngày 6</th>
+  <td mat-cell *matCellDef="let element"> {{element.day_6}} </td>
+</ng-container>
+
+<ng-container matColumnDef="day_7">
+  <th mat-header-cell *matHeaderCellDef> Ngày 7</th>
+  <td mat-cell *matCellDef="let element"> {{element.day_7}} </td>
+</ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <a routerLink="">Về trang chủ</a>
+  
+  
+  
+

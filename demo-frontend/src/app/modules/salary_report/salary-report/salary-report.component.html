@@ -1,0 +1,132 @@
+<table mat-table [dataSource]="salaryReports" class="mat-elevation-z8">
+
+     <!-- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition"
+  
+     Position Column -->
+    <ng-container matColumnDef="month">
+      <th mat-header-cell *matHeaderCellDef> Tháng </th>
+      <td mat-cell *matCellDef="let element"> {{element.month}} </td>
+    </ng-container>
+  
+     Name Column 
+    <ng-container matColumnDef="employee_id">
+      <th mat-header-cell *matHeaderCellDef> Mã nhân viên </th>
+      <td mat-cell *matCellDef="let element"> {{element.employee_id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="ngay_cong_chuan">
+      <th mat-header-cell *matHeaderCellDef> Ngày công chuẩn </th>
+      <td mat-cell *matCellDef="let element"> {{element.ngay_cong_chuan}} </td>
+    </ng-container>
+
+  -  <ng-container matColumnDef="ngay_cong_OT">
+      <th mat-header-cell *matHeaderCellDef> Ngày công Overtime </th>
+      <td mat-cell *matCellDef="let element"> {{element.ngay_cong_OT}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="cong_tac_phi">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element"> {{element.cong_tac_phi}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="thuong">
+      <th mat-header-cell *matHeaderCellDef> Công tác phí</th>
+      <td mat-cell *matCellDef="let element"> {{element.thuong}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="phut_di_muon">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element"> {{element.phut_di_muon}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="khoan_tru_khac">
+      <th mat-header-cell *matHeaderCellDef> Phút đi muộn </th>
+      <td mat-cell *matCellDef="let element"> {{element.khoan_tru_khac}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="ngay_cong_tinh_luong">
+      <th mat-header-cell *matHeaderCellDef> Ngày công tính lương </th>
+      <td mat-cell *matCellDef="let element"> {{element.ngay_cong_tinh_luong}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="luong_theo_ngay_cong">
+      <th mat-header-cell *matHeaderCellDef>Lương theo ngày công </th>
+      <td mat-cell *matCellDef="let element"> {{element.luong_theo_ngay_cong}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="luong_OT">
+      <th mat-header-cell *matHeaderCellDef> Lương Overtime </th>
+      <td mat-cell *matCellDef="let element"> {{element.luong_OT}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="phu_cap_khac">
+      <th mat-header-cell *matHeaderCellDef> Phụ cấp khác </th>
+      <td mat-cell *matCellDef="let element"> {{element.phu_cap_khac}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="tru_di_muon">
+      <th mat-header-cell *matHeaderCellDef> Trừ đi muộn </th>
+      <td mat-cell *matCellDef="let element"> {{element.tru_di_muon}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="phu_cap_an_trua">
+      <th mat-header-cell *matHeaderCellDef>Phụ cấp ăn trưa </th>
+      <td mat-cell *matCellDef="let element"> {{element.phu_cap_an_trua}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="bao_hiem">
+      <th mat-header-cell *matHeaderCellDef>Bảo hiểm</th>
+      <td mat-cell *matCellDef="let element"> {{element.bao_hiem}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="tong_thu_nhap">
+      <th mat-header-cell *matHeaderCellDef> Tổng thu nhập </th>
+      <td mat-cell *matCellDef="let element"> {{element.tong_thu_nhap}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="tien_an_duoc_mien_thue">
+      <th mat-header-cell *matHeaderCellDef>Tiền ăn miễn thuế </th>
+      <td mat-cell *matCellDef="let element"> {{element.tien_an_duoc_mien_thue}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="luong_OT_duoc_mien_thue">
+      <th mat-header-cell *matHeaderCellDef> Lương OT miễn thuế </th>
+      <td mat-cell *matCellDef="let element"> {{element.luong_OT_duoc_mien_thue}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="giam_tru_gia_canh">
+      <th mat-header-cell *matHeaderCellDef>Giảm trừ gia cảnh </th>
+      <td mat-cell *matCellDef="let element"> {{element.giam_tru_gia_canh}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="thu_nhap_tinh_thue">
+      <th mat-header-cell *matHeaderCellDef> Thu nhập tính thuế </th>
+      <td mat-cell *matCellDef="let element"> {{element.thu_nhap_tinh_thue}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="thue_TNCN">
+      <th mat-header-cell *matHeaderCellDef> Thuế TNCN </th>
+      <td mat-cell *matCellDef="let element"> {{element.thue_TNCN}} </td>
+    </ng-container>
+
+    -  <ng-container matColumnDef="luong_thuc_nhan">
+      <th mat-header-cell *matHeaderCellDef> Lương thực nhận</th>
+      <td mat-cell *matCellDef="let element"> {{element.luong_thuc_nhan}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="link">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element">
+          <a routerLink="/checkin_calendar/{{element.employee_id}}">Chi tiết chấm công</a>
+      </td>
+  </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+<a routerLink="/salary_reports">
+  Bảng lương nhân viên
+</a>
+<a routerLink="/checkin_form">
+  Tính lương nhân viên
+</a> 

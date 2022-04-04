@@ -1,0 +1,75 @@
+<form [formGroup]="employeeFormGroup" novalidate (ngSubmit)="saveEmployee()">
+    <h1>Employee Form</h1>
+    <div class="form-group">
+        <label class="center-block">Ho ten:
+            <small class="text-danger">*</small>
+            <input type="text" class="form-control" formControlName="fullName"ng >
+            <small *ngIf="employeeFormGroup.get('fullName')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Ma nhan vien
+            <small class="text-danger">*</small>
+            <input type="text" class="form-control" formControlName="employee_id">
+            <small *ngIf="employeeFormGroup.get('employee_id')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Email
+            <input type="text" class="form-control" formControlName="email">
+        </label>
+        <label class="center-block">So dien thoai
+            <input type="text" class="form-control" formControlName="phone_number">
+        </label>
+        <label class="center-block">Ma phong ban
+            <small  class="text-danger">*</small>
+            <!-- <input type="text" class="form-control" formControlName="department_id"> -->
+            <select class="form-control" formControlName="department_id">
+                <option *ngFor="let department of departments">
+                    {{department.id}}
+                </option>
+            </select>
+            <small *ngIf="employeeFormGroup.get('department_id')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Lương cơ bản
+            <small class="text-danger">*</small>
+            <input type="text" class="form-control" formControlName="basic_salary">
+            <small *ngIf="employeeFormGroup.get('basic_salary')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Phụ cấp ăn trưa
+            <input type="text" class="form-control" formControlName="lunch_allowance">
+            <small *ngIf="employeeFormGroup.get('lunch_allowance')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Phụ cấp khác
+            <input type="text" class="form-control" formControlName="other_allowance">
+            <small *ngIf="employeeFormGroup.get('other_allowance')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Tỷ suất bảo hiểm
+            <input type="text" class="form-control" formControlName="insurance_rate">
+            <!-- <small *ngIf="employeeFormGroup.get('insurance_rate')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small> -->
+        </label>
+        <label class="center-block">Số người phụ thuộc
+            <input type="text" class="form-control" formControlName="dependents_number">
+            <!-- <small *ngIf="employeeFormGroup.get('dependents_number')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small> -->
+        </label>
+        <div class="btn-div">
+            <button type="submit" class="button-7">Submit</button>
+        </div>
+    </div>
+    <p>Form status: {{employeeFormGroup.status | json}}</p>
+    <!-- <p>Form value: {{employeeFormGroup.value | json }}</p>
+    
+    <p>Form status: {{this.submited| json}}</p> -->
+</form>

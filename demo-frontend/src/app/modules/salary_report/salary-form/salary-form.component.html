@@ -1,0 +1,52 @@
+<form [formGroup]="salaryReportFormGroup" novalidate (ngSubmit)="saveSalaryReport()">
+    <div class="form-group">
+        <label class="center-block">Tháng
+            <small class="text-danger">*</small>
+            <input type="text" matInput [matDatepicker]="dp" class="form-control" formControlName="month">
+            <mat-datepicker-toggle [for]="dp" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #dp></mat-datepicker>
+            <small *ngIf="salaryReportFormGroup.get('month')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Mã nhân viên
+            <small class="text-danger">*</small>
+            <select class="form-control" formControlName="employee_id">
+                <option value="" disabled selected>Select the role</option>
+                <option *ngFor="let employee of employees">
+                    {{ employee.employee_id }}
+                </option>
+            </select>
+            <small *ngIf="salaryReportFormGroup.get('employee_id')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Ngày công chuẩn
+            <small class="text-danger">*</small>
+            <input type="text" class="form-control" formControlName="ngay_cong_chuan">
+            <small *ngIf="salaryReportFormGroup.get('ngay_cong_chuan')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Ngày công Overtime
+            <input type="text" class="form-control" formControlName="ngay_cong_OT">
+        </label>
+        <label class="center-block">Công tác phí
+            <input type="text" class="form-control" formControlName="cong_tac_phi">
+        </label>
+        <label class="center-block">Thưởng
+            <input type="text" class="form-control" formControlName="thuong">
+        </label>
+        <label class="center-block">Phút đi muộn
+            <input type="text" class="form-control" formControlName="phut_di_muon">
+            <small *ngIf="salaryReportFormGroup.get('phut_di_muon')?.invalid && this.submited == true " class="text-danger">
+                This field is required!
+            </small>
+        </label>
+        <label class="center-block">Khoản trừ khác
+            <input type="text" class="form-control" formControlName="khoan_tru_khac">
+        </label>
+    </div>
+    <p>Form value: {{salaryReportFormGroup.value.employee_id | json }}</p>
+    <button type="submit" class="btn btn-primary" [disabled]="!salaryReportFormGroup.valid">Submit</button>
+</form>
